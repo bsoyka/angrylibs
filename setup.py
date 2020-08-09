@@ -10,7 +10,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Ben Soyka",
     author_email="bensoyka@icloud.com",
-    url="https://angrylibs.readthedocs.io",
+    url="https://angry-libs.readthedocs.io",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
