@@ -76,11 +76,18 @@ def settings_file() -> Path:
 def show_directions():
     """Shows the user directions for the program"""
 
-    directions_path = Path(__file__).parent / "first_time.txt"
+    echo(
+        """WELCOME TO ANGRY LIBS!
+======================
 
-    with directions_path.open() as file:
-        echo(file.read())
-        echo()
+Here's how to get started:
+
+* Pick a story from the random choices given
+
+* Fill in the blanks! Some word types will give you a random default value, which you can use by just pressing Enter!
+
+* Read your story and laugh!"""
+    )
 
 
 def story_list():
