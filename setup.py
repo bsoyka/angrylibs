@@ -5,7 +5,7 @@ with open("README.md") as file:
 setup(
     name="angrylibs",
     description="Have a fluffy time by making some slimey choices",
-    version="1.0.1",
+    version="1.0.2",
     long_description=readme,
     long_description_content_type="text/markdown",
     author="Ben Soyka",
@@ -31,4 +31,5 @@ setup(
     zip_safe=False,
     install_requires=["click~=7.1.2", "inflect~=4.1.0", "nltk~=3.5"],
     python_requires=">=3.7",
+    include_package_data=True,
 )

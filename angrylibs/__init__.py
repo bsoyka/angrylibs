@@ -29,7 +29,7 @@ from .helpers import (
 
 
 @command()
-@version_option(version="1.0.1", prog_name="Angry Libs")
+@version_option(version="1.0.2", prog_name="Angry Libs")
 @option(
     "--reset-settings",
     help="Reset your Angry Libs settings and exit.",
