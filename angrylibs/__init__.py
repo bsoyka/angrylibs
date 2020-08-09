@@ -159,5 +159,5 @@ def main(reset_settings=False, nltk_data=False):
 
     echo_via_pager(new_text)
 
-
-main()
+if __name__ == "__main__":
+    main()
