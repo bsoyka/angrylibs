@@ -1,6 +1,6 @@
 from setuptools import setup
 
-with open("README.md", "r", "utf-8") as file:
+with open("README.md") as file:
     readme = file.read()
 setup(
     name="angrylibs",
