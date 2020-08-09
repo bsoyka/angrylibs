@@ -107,5 +107,5 @@ def story_name_from_path(path: str) -> str:
 def words_dict() -> dict:
     """Gets the dictionary from words.json"""
 
-    with open("words.json") as file:
+    with open(Path(__file__).parent / "words.json") as file:
         return load(file)

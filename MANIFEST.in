@@ -1,1 +1,2 @@
 include angrylibs/stories/*
+include angrylibs/words.json
