@@ -135,7 +135,7 @@ def cli():
     parser = ArgumentParser(
         description="Have a fluffy time by making some slimey choices"
     )
-    parser.add_argument("-v", "--version", action="version", version="Angry Libs 2.0.0")
+    parser.add_argument("-v", "--version", action="version", version="Angry Libs 2.1.0")
     parser.add_argument("--reset", action="store_true")
 
     args = parser.parse_args()
