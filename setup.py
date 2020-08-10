@@ -32,4 +32,8 @@ setup(
     install_requires=["click>=2.0", "inflect>=4.0.0", "nltk>=3.0", "rich>=5.0.0"],
     python_requires=">=3.7",
     include_package_data=True,
+    project_urls={
+        "Documentation": "https://angry-libs.readthedocs.io/",
+        "Changelog": "https://github.com/bsoyka/angrylibs/blob/master/CHANGELOG.md",
+    },
 )
