@@ -1,8 +1,25 @@
-# Angry Libs
+# Angry Libs [![Version 2.1.1](https://img.shields.io/badge/version-2.1.1-orange)][release] [![MIT License](https://img.shields.io/badge/license-MIT-green)][license] [![GitHub stars](https://img.shields.io/github/stars/bsoyka/angrylibs?style=social)][stars]
 
-[![Version 2.1.0](https://img.shields.io/badge/version-2.1.0-orange)](https://github.com/bsoyka/angrylibs/releases/tag/2.1.0)
-[![MIT License](https://img.shields.io/badge/license-MIT-green)](https://github.com/bsoyka/angrylibs/blob/master/LICENSE)
-[![Documentation](https://img.shields.io/badge/documentation-blue)](https://angry-libs.readthedocs.io)
-[![Changelog](https://img.shields.io/badge/changelog-purple)](https://github.com/bsoyka/angrylibs/blob/master/CHANGELOG.md)
+**Have a fluffy time by making some slimey choices**
 
-Have a fluffy time by making some slimey choices
+To get started, take a look at the [![documentation](https://img.shields.io/badge/documentation-blue)][documentation]. If you want to see what's new, check out the 
+[![changelog](https://img.shields.io/badge/changelog-purple)][changelog]!
+
+## Contributing
+
+All of Angry Libs is open source! You can get started with the following links:
+
+[![bsoyka/angrylibs](https://img.shields.io/badge/bsoyka-angrylibs-red?logo=github)][github] 
+[![GitHub issues](https://img.shields.io/github/issues/bsoyka/angrylibs)][issues]
+[![Help wanted](https://img.shields.io/github/issues/bsoyka/angrylibs/help%20wanted?label=help%20wanted&color=008672)][help wanted]
+[![Good first issues](https://img.shields.io/github/issues/bsoyka/angrylibs/good%20first%20issue?label=good%20first%20issues&color=7057ff)][good first issues]
+
+[changelog]: https://github.com/bsoyka/angrylibs/blob/master/CHANGELOG.md
+[documentation]: https://angry-libs.readthedocs.io
+[github]: https://github.com/bsoyka/angrylibs
+[good first issues]: https://github.com/bsoyka/angrylibs/labels/good%20first%20issue
+[help wanted]: https://github.com/bsoyka/angrylibs/labels/help%20wanted
+[issues]: https://github.com/bsoyka/angrylibs/issues
+[license]: https://github.com/bsoyka/angrylibs/blob/master/LICENSE
+[release]: https://github.com/bsoyka/angrylibs/releases/tag/2.1.1
+[stars]: https://github.com/bsoyka/angrylibs/stargazers

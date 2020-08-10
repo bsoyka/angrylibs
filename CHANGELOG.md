@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2020-08-11
+## Changed
+- Updates to the README
+
 ## [2.1.0] - 2020-08-10
 ### Changed
 - Changed how words are split up to better work with puncuation (no longer using [`nltk`](https://pypi.org/project/nltk/))
