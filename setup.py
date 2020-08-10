@@ -5,7 +5,7 @@ with open("README.md") as file:
 setup(
     name="angrylibs",
     description="Have a fluffy time by making some slimy choices",
-    version="2.1.1",
+    version="2.1.2",
     long_description=readme,
     long_description_content_type="text/markdown",
     author="Ben Soyka",

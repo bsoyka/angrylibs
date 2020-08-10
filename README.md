@@ -1,4 +1,4 @@
-# Angry Libs [![Version 2.1.1](https://img.shields.io/badge/version-2.1.1-orange)][release] [![MIT License](https://img.shields.io/badge/license-MIT-green)][license] [![GitHub stars](https://img.shields.io/github/stars/bsoyka/angrylibs?style=social)][stars]
+# Angry Libs [![Version 2.1.2](https://img.shields.io/badge/version-2.1.2-orange)][release] [![MIT License](https://img.shields.io/badge/license-MIT-green)][license] [![GitHub stars](https://img.shields.io/github/stars/bsoyka/angrylibs?style=social)][stars]
 
 **Have a fluffy time by making some slimy choices**
 
@@ -21,5 +21,5 @@ All of Angry Libs is open source! You can get started with the following links:
 [help wanted]: https://github.com/bsoyka/angrylibs/labels/help%20wanted
 [issues]: https://github.com/bsoyka/angrylibs/issues
 [license]: https://github.com/bsoyka/angrylibs/blob/master/LICENSE
-[release]: https://github.com/bsoyka/angrylibs/releases/tag/2.1.1
+[release]: https://github.com/bsoyka/angrylibs/releases/tag/2.1.2
 [stars]: https://github.com/bsoyka/angrylibs/stargazers

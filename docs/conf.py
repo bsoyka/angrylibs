@@ -23,8 +23,8 @@ project = 'Angry Libs'
 copyright = '2020-present Benjamin Soyka'
 author = 'Ben Soyka'
 
-version = '2.1.1'
-release = '2.1.1'
+version = '2.1.2'
+release = '2.1.2'
 
 
 # -- General configuration ---------------------------------------------------
