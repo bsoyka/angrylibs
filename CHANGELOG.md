@@ -8,17 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [2.0.0] - 2020-08-10
-## Added
+### Added
 - This change log!
 
-## Changed
+### Changed
 - Switched over to [`rich`](https://pypi.org/project/rich/) and [`argparse`](https://docs.python.org/3/library/argparse.html) to replace most of what [`click`](https://pypi.org/project/click/) does
 - Updated dependencies to allow some older versions
 - Marked as stable on PyPI
 - Changed `--reset-settings` option to simply `--reset`
 
 ## [1.0.3] - 2020-08-09
-## Fixed
+### Fixed
 - Solved bug with the random word suggestions
 
 ## [1.0.2] - 2020-08-09
