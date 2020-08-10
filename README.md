@@ -1,6 +1,6 @@
 # Angry Libs [![Version 2.1.1](https://img.shields.io/badge/version-2.1.1-orange)][release] [![MIT License](https://img.shields.io/badge/license-MIT-green)][license] [![GitHub stars](https://img.shields.io/github/stars/bsoyka/angrylibs?style=social)][stars]
 
-**Have a fluffy time by making some slimey choices**
+**Have a fluffy time by making some slimy choices**
 
 To get started, take a look at the [![documentation](https://img.shields.io/badge/documentation-blue)][documentation]. If you want to see what's new, check out the 
 [![changelog](https://img.shields.io/badge/changelog-purple)][changelog]!

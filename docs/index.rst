@@ -6,7 +6,7 @@
 Welcome to the Angry Libs documentation!
 ========================================
 
-Have a fluffy time by making some slimey choices
+Have a fluffy time by making some slimy choices
 
 .. toctree::
    :maxdepth: 2

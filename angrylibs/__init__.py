@@ -133,7 +133,7 @@ def reset_settings():
 
 def cli():
     parser = ArgumentParser(
-        description="Have a fluffy time by making some slimey choices"
+        description="Have a fluffy time by making some slimy choices"
     )
     parser.add_argument("-v", "--version", action="version", version="Angry Libs 2.1.1")
     parser.add_argument("--reset", action="store_true")
