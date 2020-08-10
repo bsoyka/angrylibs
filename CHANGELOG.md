@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Stories
+#### Added
+- Bowling
+- Driving Tips
+- How To Be A Photographer
 
 ## [2.0.0] - 2020-08-10
 ### Added
@@ -16,6 +21,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated dependencies to allow some older versions
 - Marked as stable on PyPI
 - Changed `--reset-settings` option to simply `--reset`
+
+### Stories
+#### Added
+- Going For A Hike
+- Mr Snowman
+
+#### Removed
+- Personal Ad
+
+#### Fixed
+- Letter From Camp
 
 ## [1.0.3] - 2020-08-09
 ### Fixed
