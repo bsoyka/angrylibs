@@ -23,8 +23,8 @@ Just run the program with the ``--reset-settings`` flag to reset your Angry Libs
 
 ::
 
-    $ angrylibs --reset-settings
-    Are you sure you want to reset all Angry Libs settings [y/N]? y
+    $ angrylibs --reset
+    Are you sure you want to reset all Angry Libs settings [y/n] (n)? y
     Success!
 
 Now, just run the program again without the flag and it'll be just like new.

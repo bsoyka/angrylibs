@@ -146,7 +146,7 @@ def cli():
     )
     parser.add_argument("-v", "--version", action="version", version="Angry Libs 1.0.3")
     parser.add_argument("-d", "--nltk-data", action="store_true")
-    parser.add_argument("--reset-settings", action="store_true")
+    parser.add_argument("--reset", action="store_true")
 
     args = parser.parse_args()
 
@@ -154,7 +154,7 @@ def cli():
         nltk_data()
         return
 
-    if args.reset_settings:
+    if args.reset:
         reset_settings()
         return
 
