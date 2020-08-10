@@ -29,7 +29,7 @@ setup(
         "console_scripts": ["angrylibs=angrylibs:cli", "libs=angrylibs:cli"]
     },
     zip_safe=False,
-    install_requires=["click~=7.1.2", "inflect~=4.1.0", "nltk~=3.5"],
+    install_requires=["click>=2.0", "inflect>=4.0.0", "nltk>=3.0", "rich>=5.0.0"],
     python_requires=">=3.7",
     include_package_data=True,
 )
