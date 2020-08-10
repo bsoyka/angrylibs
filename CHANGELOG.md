@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Corrected misspelling of "slimy"
 
+### Stories
+#### Added
+- Gopher Gulch
+- One More Game
+
 ## [2.1.1] - 2020-08-10
 ### Changed
 - Updates to the README
