@@ -4,7 +4,6 @@ from pathlib import Path
 from random import shuffle
 from string import punctuation
 
-from nltk import download, word_tokenize
 from rich import print
 from rich.markdown import Markdown
 from rich.panel import Panel
@@ -27,7 +26,6 @@ def main():
         get_setting("opened")
     except KeyError:
         show_directions()
-        download("punkt")
         print()
         set_setting("opened", True)
 
@@ -57,7 +55,7 @@ def main():
     blanks_dict = dict()
     blanks_counter = Counter()
 
-    for word in word_tokenize(story_template):
+    for word in story_template.split(" "):
         if "__" in word:
             blank_type = word.split("__")[1]
 
@@ -81,7 +79,7 @@ def main():
 
     for paragraph in story_template.split("\n"):
         previous_word = ""
-        for word in word_tokenize(paragraph):
+        for word in paragraph.split(" "):
             prefix = ""
             suffix = ""
 
@@ -103,12 +101,9 @@ def main():
                 else:
                     word = blanks_dict[blank_type].pop()
 
-            if word in punctuation or word in ["n't", "'s", "n"]:
-                new_text = new_text[:-1] + word + " "
-            else:
-                if previous_word == "." or previous_word == "\n" or previous_word == "":
-                    word = word.capitalize()
-                new_text += prefix + word + suffix + " "
+            if previous_word == "":
+                word = word.capitalize()
+            new_text += prefix + word + suffix + " "
 
             previous_word = word
 
@@ -122,10 +117,6 @@ def main():
             title="[bold magenta]" + story_name_from_path(story_path),
         )
     )
-
-
-def nltk_data():
-    download("punkt")
 
 
 def reset_settings():
@@ -145,14 +136,9 @@ def cli():
         description="Have a fluffy time by making some slimey choices"
     )
     parser.add_argument("-v", "--version", action="version", version="Angry Libs 2.0.0")
-    parser.add_argument("-d", "--nltk-data", action="store_true")
     parser.add_argument("--reset", action="store_true")
 
     args = parser.parse_args()
-
-    if args.nltk_data:
-        nltk_data()
-        return
 
     if args.reset:
         reset_settings()
