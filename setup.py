@@ -12,7 +12,7 @@ setup(
     author_email="bensoyka@icloud.com",
     url="https://angry-libs.readthedocs.io",
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
