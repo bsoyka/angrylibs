@@ -1,20 +1,14 @@
+from argparse import ArgumentParser
 from collections import Counter
 from pathlib import Path
 from random import shuffle
 from string import punctuation
 
-from click import (
-    Choice,
-    clear,
-    command,
-    confirm,
-    echo,
-    echo_via_pager,
-    option,
-    prompt,
-    version_option,
-)
 from nltk import download, word_tokenize
+from rich import print
+from rich.markdown import Markdown
+from rich.panel import Panel
+from rich.prompt import Confirm, Prompt
 
 from .helpers import (
     display_name,
@@ -28,44 +22,13 @@ from .helpers import (
 )
 
 
-@command()
-@version_option(version="1.0.3", prog_name="Angry Libs")
-@option(
-    "--reset-settings",
-    help="Reset your Angry Libs settings and exit.",
-    is_flag=True,
-    flag_value=True,
-)
-@option(
-    "--nltk-data",
-    help='Download/update the "punkt" resource from NLTK and exit.',
-    is_flag=True,
-    flag_value=True,
-)
-def main(reset_settings=False, nltk_data=False):
-    if reset_settings:
-        if confirm(
-            "Are you sure you want to reset all Angry Libs settings", prompt_suffix="? "
-        ):
-            with settings_file().open("w") as file:
-                file.write("{}")
-
-            echo("Success!")
-        else:
-            echo("Aborted")
-
-        return
-
-    if nltk_data:
-        download("punkt")
-        return
-
+def main():
     try:
         get_setting("opened")
     except KeyError:
         show_directions()
         download("punkt")
-        echo()
+        print()
         set_setting("opened", True)
 
     story_paths = story_list()
@@ -78,12 +41,12 @@ def main(reset_settings=False, nltk_data=False):
     }
 
     for story in stories.keys():
-        echo(story)
+        print(story)
 
-    echo()
+    print()
 
-    story_choice = prompt(
-        "Choose a story", type=Choice([x.split(".")[0] for x in stories.keys()])
+    story_choice = Prompt.ask(
+        "Choose a story", choices=[x.split(".")[0] for x in stories.keys()], default="1"
     )
 
     story_path = Path(story_paths[int(story_choice) - 1])
@@ -106,8 +69,6 @@ def main(reset_settings=False, nltk_data=False):
 
     keys = list(blanks_dict.keys())
     shuffle(keys)
-
-    clear()
 
     for blank in keys:
         if "/" in blank:
@@ -142,7 +103,7 @@ def main(reset_settings=False, nltk_data=False):
                 else:
                     word = blanks_dict[blank_type].pop()
 
-            if word in punctuation or word in {"n't", "'s", "n"}:
+            if word in punctuation or word in ["n't", "'s", "n"]:
                 new_text = new_text[:-1] + word + " "
             else:
                 if previous_word == "." or previous_word == "\n" or previous_word == "":
@@ -155,9 +116,50 @@ def main(reset_settings=False, nltk_data=False):
 
     new_text = new_text.replace("\\", "\n")
 
-    clear()
+    print(
+        Panel(
+            Markdown(new_text),
+            title="[bold magenta]" + story_name_from_path(story_path),
+        )
+    )
 
-    echo_via_pager(new_text)
+
+def nltk_data():
+    download("punkt")
+
+
+def reset_settings():
+    if Confirm.ask(
+        "Are you sure you want to reset all Angry Libs settings?", default=False
+    ):
+        with settings_file().open("w") as file:
+            file.write("{}")
+
+        print("Success!")
+    else:
+        print("Aborted")
+
+
+def cli():
+    parser = ArgumentParser(
+        description="Have a fluffy time by making some slimey choices"
+    )
+    parser.add_argument("-v", "--version", action="version", version="Angry Libs 1.0.3")
+    parser.add_argument("-d", "--nltk-data", action="store_true")
+    parser.add_argument("--reset-settings", action="store_true")
+
+    args = parser.parse_args()
+
+    if args.nltk_data:
+        nltk_data()
+        return
+
+    if args.reset_settings:
+        reset_settings()
+        return
+
+    main()
+
 
 if __name__ == "__main__":
-    main()
+    cli()

@@ -26,7 +26,7 @@ setup(
     license="MIT",
     packages=["angrylibs"],
     entry_points={
-        "console_scripts": ["angrylibs=angrylibs:main", "libs=angrylibs:main"]
+        "console_scripts": ["angrylibs=angrylibs:cli", "libs=angrylibs:cli"]
     },
     zip_safe=False,
     install_requires=["click~=7.1.2", "inflect~=4.1.0", "nltk~=3.5"],

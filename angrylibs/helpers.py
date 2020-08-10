@@ -4,8 +4,12 @@ from pathlib import Path
 from random import choice
 from re import search
 
-from click import echo, get_app_dir, prompt
+from click import get_app_dir
 from inflect import engine
+from rich import print
+from rich.markdown import Markdown
+from rich.panel import Panel
+from rich.prompt import Prompt
 
 p = engine()
 
@@ -35,14 +39,14 @@ def prompt_for_word(type_: str) -> str:
         else:
             random_word = None
 
-        return p.plural(prompt(text=display_name("noun"), default=random_word))
+        return p.plural(Prompt.ask(display_name("noun"), default=random_word))
     else:
         if type_.strip("_AN") in words_dict().keys():
             random_word = choice(words_dict()[type_.strip("_AN")])
         else:
             random_word = None
 
-        user_input = prompt(text=display_name(type_.strip("_AN")), default=random_word)
+        user_input = Prompt.ask(display_name(type_.strip("_AN")), default=random_word)
 
         if "_AN" in type_:
             return p.a(user_input)
@@ -76,17 +80,19 @@ def settings_file() -> Path:
 def show_directions():
     """Shows the user directions for the program"""
 
-    echo(
-        """WELCOME TO ANGRY LIBS!
-======================
-
-Here's how to get started:
+    print(
+        Panel(
+            Markdown(
+                """**Here's how to get started:**
 
 * Pick a story from the random choices given
 
 * Fill in the blanks! Some word types will give you a random default value, which you can use by just pressing Enter!
 
 * Read your story and laugh!"""
+            ),
+            title="[bold green]WELCOME TO ANGRY LIBS!",
+        )
     )
 
 
