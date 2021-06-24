@@ -38,21 +38,24 @@ def main():
         for index, path in enumerate(story_paths, start=1)
     }
 
-    for story in stories.keys():
+    for story in stories:
         print(story)
 
     print()
 
     story_choice = Prompt.ask(
-        "Choose a story", choices=[x.split(".")[0] for x in stories.keys()], default="1"
+        "Choose a story",
+        choices=[x.split(".")[0] for x in stories],
+        default="1",
     )
+
 
     story_path = Path(story_paths[int(story_choice) - 1])
 
     with story_path.open() as file:
         story_template = file.read()
 
-    blanks_dict = dict()
+    blanks_dict = {}
     blanks_counter = Counter()
 
     for word in story_template.split(" "):
