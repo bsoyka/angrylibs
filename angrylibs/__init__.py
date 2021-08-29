@@ -23,18 +23,18 @@ from .helpers import (
 
 def main():
     try:
-        get_setting("opened")
+        get_setting('opened')
     except KeyError:
         show_directions()
         print()
-        set_setting("opened", True)
+        set_setting('opened', True)
 
     story_paths = story_list()
     shuffle(story_paths)
     story_paths = story_paths[:5]
 
     stories = {
-        str(index) + ". " + story_name_from_path(path): path
+        str(index) + '. ' + story_name_from_path(path): path
         for index, path in enumerate(story_paths, start=1)
     }
 
@@ -44,11 +44,10 @@ def main():
     print()
 
     story_choice = Prompt.ask(
-        "Choose a story",
-        choices=[x.split(".")[0] for x in stories],
-        default="1",
+        'Choose a story',
+        choices=[x.split('.')[0] for x in stories],
+        default='1',
     )
-
 
     story_path = Path(story_paths[int(story_choice) - 1])
 
@@ -58,12 +57,12 @@ def main():
     blanks_dict = {}
     blanks_counter = Counter()
 
-    for word in story_template.split(" "):
-        if "__" in word:
-            blank_type = word.split("__")[1]
+    for word in story_template.split(' '):
+        if '__' in word:
+            blank_type = word.split('__')[1]
 
-            if "/" in blank_type:
-                blanks_dict[blank_type] = ""
+            if '/' in blank_type:
+                blanks_dict[blank_type] = ''
             else:
                 blanks_dict[blank_type] = []
                 blanks_counter[blank_type] += 1
@@ -72,74 +71,77 @@ def main():
     shuffle(keys)
 
     for blank in keys:
-        if "/" in blank:
-            blanks_dict[blank] = prompt_for_word(blank.split("/")[0])
+        if '/' in blank:
+            blanks_dict[blank] = prompt_for_word(blank.split('/')[0])
         else:
             for _ in range(blanks_counter[blank]):
                 blanks_dict[blank].append(prompt_for_word(blank))
 
-    new_text = ""
+    new_text = ''
 
-    for paragraph in story_template.split("\n"):
-        previous_word = ""
-        for word in paragraph.split(" "):
-            prefix = ""
-            suffix = ""
+    for paragraph in story_template.split('\n'):
+        previous_word = ''
+        for word in paragraph.split(' '):
+            prefix = ''
+            suffix = ''
 
-            if "__" in word:
-                blank_type = word.split("__")[1]
+            if '__' in word:
+                blank_type = word.split('__')[1]
 
                 try:
-                    suffix = word.split("__")[2]
+                    suffix = word.split('__')[2]
                 except:
                     pass
 
                 try:
-                    prefix = word.split("__")[0]
+                    prefix = word.split('__')[0]
                 except:
                     pass
 
-                if "/" in blank_type:
+                if '/' in blank_type:
                     word = blanks_dict[blank_type]
                 else:
                     word = blanks_dict[blank_type].pop()
 
-            if previous_word == "":
+            if previous_word == '':
                 word = word.capitalize()
-            new_text += prefix + word + suffix + " "
+            new_text += prefix + word + suffix + ' '
 
             previous_word = word
 
-        new_text += "\n"
+        new_text += '\n'
 
-    new_text = new_text.replace("\\", "\n")
+    new_text = new_text.replace('\\', '\n')
 
     print(
         Panel(
             Markdown(new_text),
-            title="[bold magenta]" + story_name_from_path(story_path),
+            title='[bold magenta]' + story_name_from_path(story_path),
         )
     )
 
 
 def reset_settings():
     if Confirm.ask(
-        "Are you sure you want to reset all Angry Libs settings?", default=False
+        'Are you sure you want to reset all Angry Libs settings?',
+        default=False,
     ):
-        with settings_file().open("w") as file:
-            file.write("{}")
+        with settings_file().open('w') as file:
+            file.write('{}')
 
-        print("Success!")
+        print('Success!')
     else:
-        print("Aborted")
+        print('Aborted')
 
 
 def cli():
     parser = ArgumentParser(
-        description="Have a fluffy time by making some slimy choices"
+        description='Have a fluffy time by making some slimy choices'
     )
-    parser.add_argument("-v", "--version", action="version", version="Angry Libs 2.1.2")
-    parser.add_argument("--reset", action="store_true")
+    parser.add_argument(
+        '-v', '--version', action='version', version='Angry Libs 2.1.2'
+    )
+    parser.add_argument('--reset', action='store_true')
 
     args = parser.parse_args()
 
@@ -150,5 +152,5 @@ def cli():
     main()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     cli()

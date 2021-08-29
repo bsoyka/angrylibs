@@ -10,17 +10,17 @@ from angrylibs.helpers import (
 
 
 @mark.parametrize(
-    "test_input,expected",
+    'test_input,expected',
     [
-        ("ALL CAPS", "All Caps"),
-        ("hElLO wORlD", "Hello World"),
-        ("OnEWoRD", "Oneword"),
-        ("underscores_in_this_one", "Underscores In This One"),
-        ("verb_ing", "Verb ending in -ing"),
+        ('ALL CAPS', 'All Caps'),
+        ('hElLO wORlD', 'Hello World'),
+        ('OnEWoRD', 'Oneword'),
+        ('underscores_in_this_one', 'Underscores In This One'),
+        ('verb_ing', 'Verb ending in -ing'),
     ],
 )
 def test_display_name(test_input: str, expected: str):
-    assert display_name("heLLo WOrlD") == "Hello World"
+    assert display_name('heLLo WOrlD') == 'Hello World'
 
 
 def test_settings_file():
@@ -38,16 +38,16 @@ def test_story_list():
 
 
 @mark.parametrize(
-    "file_path",
+    'file_path',
     [
-        "stories/story_name.story.txt",
-        "~/path/to/stories/story_name.story.txt",
-        "stories\\story_name.story.txt",
-        "\\backslashes\\to\\stories\\story_name.story.txt",
+        'stories/story_name.story.txt',
+        '~/path/to/stories/story_name.story.txt',
+        'stories\\story_name.story.txt',
+        '\\backslashes\\to\\stories\\story_name.story.txt',
     ],
 )
 def test_story_name_from_path(file_path):
-    assert story_name_from_path(file_path) == "Story Name"
+    assert story_name_from_path(file_path) == 'Story Name'
 
 
 def test_words_dict():
